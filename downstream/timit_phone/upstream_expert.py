@@ -29,7 +29,7 @@ class UpstreamExpert(nn.Module):
         modelrc = config['downstream_expert']['modelrc']
         model_cls = eval(modelrc['select'])
         model_conf = modelrc[modelrc['select']]
-        self.model = model_cls(self.upstream.get_output_dim(), output_class_num=TIMIT_PHONE_CLASSES, **model_conf)
+        self.model = model_cls(self.get_output_dim(), output_class_num=TIMIT_PHONE_CLASSES, **model_conf)
         self.model.load_state_dict(UpstreamExpert._fix_state_key(ckpt['Downstream']))
 
     @staticmethod
