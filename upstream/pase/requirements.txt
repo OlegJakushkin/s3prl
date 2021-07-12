@@ -1,4 +1,4 @@
-cupy-cuda110
+cupy-cuda114
 SoundFile
 scikit_learn
 pynvrtc>=8.0
